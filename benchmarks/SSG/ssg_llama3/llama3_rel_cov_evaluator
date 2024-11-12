@@ -1,0 +1,105 @@
+import json
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
+# Load the model and tokenizer from cache
+MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
+CACHE_DIR = "/data/milsrg1/huggingface/cache/tl578/cache"
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR)
+model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map='auto', cache_dir=CACHE_DIR)
+model.eval()
+
+# Set up the pipeline for generation
+llm_pipeline = pipeline(
+    "text-generation",
+    model=model,
+    tokenizer=tokenizer,
+    torch_dtype=torch.float16,
+    pad_token_id=tokenizer.eos_token_id
+)
+
+# Load the JSON file with generated answers
+input_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/alog/l2p/gen/sample,top_p=0.9,temperature=1.0.json'
+with open(input_file, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+# Evaluate each generated answer and store results
+evaluation_results = []
+for item in data:
+    answer = item.get("answer", "")
+    generated_answer = item.get("generated_answer", "")
+    
+    
+    # Define messages for evaluation with roles and structured content
+    evaluation_messages = [
+        {"role": "system", "content": "You are a helpful assistant evaluating academic presentations."},
+        {
+            "role": "user",
+            "content": f"""
+        You are provided with two scripts for a single slide in an academic presentation:
+
+        - Script A: (Reference Script)
+        - Script B: (Comparison Script)
+
+        Your task is to evaluate Script B in comparison to Script A based on the following criteria, focusing only on the core content relevant to the subject. Ignore less important elements such as greetings, transitions, and filler phrases.
+
+        1. **Coverage**
+        - **Objective:** Assess how thoroughly Script B includes the core content presented in Script A.
+        - **Considerations:** Does Script B cover all essential points from Script A? Are any critical details missing?
+
+        2. **Precision**
+        - **Objective:** Assess how much core content in Script B is not directly aligned with or covered in Script A.
+        - **Considerations:** Does Script B introduce core content that is not found in Script A? Are there any points in Script B that seem unrelated or add unnecessary information beyond what is covered in Script A?
+
+
+        **Instructions:**
+
+        - For each criterion, provide a score from 1 (lowest) to 5 (highest).
+        - After each score, include a brief explanation supporting your assessment.
+
+        **Scripts:**
+
+        - **Script A (Reference):**
+        {answer}
+
+        - **Script B (Comparison):**
+        {generated_answer}
+
+        **Evaluation Format:**
+
+        Please follow this exact format for your response:
+
+        - **Coverage Score:** [1-5]
+        - **Explanation:** [Provide a concise explanation of the score]
+
+        - **Precision Score:** [1-5]
+        - **Explanation:** [Provide a concise explanation of the score]
+            """
+        }
+    ]
+
+    # Generate evaluation using the model
+    response = llm_pipeline(
+        evaluation_messages,
+        max_new_tokens=300,
+        temperature=0.4,
+        num_return_sequences=1,
+        return_full_text=False
+    )
+    evaluation_text = response[0]['generated_text']
+    print("Evaluation Text:", evaluation_text)
+    
+    # Store the evaluation result
+    evaluation_results.append({
+        "question": item.get("question", ""),
+        "answer": item.get("answer", ""),
+        "generated_answer": generated_answer,
+        "evaluation": evaluation_text
+    })
+
+# Save the evaluation results to an output file
+output_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/alog/l2p/gen/llama3_rel_cov_eval.json'
+with open(output_file, 'w', encoding='utf-8') as f:
+    json.dump(evaluation_results, f, indent=2, ensure_ascii=False)
+
+print(f"Processed data has been saved to {output_file}")

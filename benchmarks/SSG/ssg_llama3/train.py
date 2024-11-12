@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 from torch.cuda.amp import autocast
 from tqdm import tqdm
-from transformers import set_seed, AutoModelForCausalLM, AutoTokenizer
+from transformers import set_seed
 import torch
 from transformers import LlamaForCausalLM
 from peft import (
@@ -83,12 +83,8 @@ def do_train(args):
     train_loader, valid_loader = get_two_loader(args)
     ##############
     print('Setup Train Model')
-    MODEL_NAME = "meta-llama/Llama-2-7b-hf"
-    CACHE_DIR = "/data/milsrg1/huggingface/cache/tl578/cache"
-
-    # 使用 Hugging Face 的 AutoTokenizer 和 AutoModelForCausalLM 加载模型和分词器，并指定 cache_dir
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR)
-    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR, device_map='auto', torch_dtype=torch.bfloat16)
+    model_path = 'ssg_llama2/statics/debug.llama2_7b'
+    model = LlamaForCausalLM.from_pretrained(model_path, device_map='auto', torch_dtype=torch.float16)
 
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
@@ -194,7 +190,6 @@ def do_train(args):
 
 
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     common_args, args = get_args('train')
     
     assert common_args.task is not None

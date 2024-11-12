@@ -10,17 +10,10 @@ from pprint import pprint
 import numpy as np
 import torch
 from torch.cuda.amp import autocast
-from transformers import set_seed
+from transformers import set_seed, AutoModelForCausalLM, AutoTokenizer
 
 from args import get_args
-from transformers import AutoModelForCausalLM
-from transformers import AutoTokenizer
-from peft import PeftModel
-
 from dataset import get_dataset
-
-from utils.tokenizer import Tokenizer
-
 
 def sample_top_p(probs, p):
     probs_sort, probs_idx = torch.sort(probs, dim=-1, descending=True)
@@ -32,12 +25,11 @@ def sample_top_p(probs, p):
     next_token = torch.gather(probs_idx, -1, next_token)
     return next_token
 
-
 @torch.no_grad()
 def generate(
     prompt_tokens,
     args
-) :
+):
     set_seed(args.seed)
     tokens = prompt_tokens
     past_key_values = None
@@ -56,7 +48,7 @@ def generate(
                     past_key_values=past_key_values
                 )
         past_key_values = output.past_key_values
-        logits = output.logits[: ,-1 ]
+        logits = output.logits[:, -1]
         
         if args.method == 'greedy_search':
             next_token = torch.argmax(logits, dim=-1)
@@ -77,7 +69,7 @@ def generate(
         
     decoded = []
     for i, t in enumerate(tokens):
-        # cut to eos tok if any
+        # cut to eos token if any
         try:
             t = t[: t.index(tokenizer.eos_token_id)]
         except ValueError:
@@ -86,39 +78,32 @@ def generate(
 
     return decoded
 
-
 if __name__ == "__main__":
     _, args = get_args('generate')
     assert os.path.exists(pjoin('ssg_llama2/alog', args.exp, '.is_done'))
-    # assert args.exp != 'try'
+    
     with open(pjoin('ssg_llama2/alog', args.exp, 'common_args.json')) as f:
         common_args = json.load(f)
     args.__dict__.update(common_args)
 
-    print('='*89);pprint(args.__dict__); 
+    print('=' * 89)
+    pprint(args.__dict__)
     set_seed(args.seed)
-    
-    # 指定模型名称和缓存路径
-    MODEL_NAME = "meta-llama/Llama-2-7b-hf"  # 你的 LLaMA 模型名称
-    CACHE_DIR = "/data/milsrg1/huggingface/cache/tl578/cache"  # 指向你的缓存目录
-    # 使用 AutoTokenizer 直接从缓存目录加载分词器
+
+    # 定义模型名称和缓存目录
+    MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
+    CACHE_DIR = "/data/milsrg1/huggingface/cache/tl578/cache"
+
+    # 使用 Hugging Face 的 AutoTokenizer 和 AutoModelForCausalLM 加载模型和分词器，并指定 cache_dir
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR)
-    base_model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map='auto', cache_dir=CACHE_DIR)
-    print("Loading the lora model...")
-    lora_model = PeftModel.from_pretrained(base_model, pjoin('ssg_llama2/alog', args.exp, 'best_model'), torch_dtype=torch.bfloat16)
-    print("Merging the lora modules...")
-    model = lora_model.merge_and_unload()
+    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR, torch_dtype=torch.bfloat16)
     model.eval()
     model.cuda()
 
-    gen_data_text = get_dataset(data_split='test',
-                            args=args,
-                            raw_text=True)
-    gen_data_token = get_dataset(data_split='test',
-                            args=args,
-                            raw_text=False)
+    gen_data_text = get_dataset(data_split='test', args=args, raw_text=True)
+    gen_data_token = get_dataset(data_split='test', args=args, raw_text=False)
     all_index = list(range(len(gen_data_token)))
-    ########## method str ###########
+
     method_str = f'{args.method}'
     if args.method == 'sample':
         method_str += f',top_p={args.top_p},temperature={args.temperature}'
@@ -128,7 +113,6 @@ if __name__ == "__main__":
         question_tokens.insert(0, tokenizer.bos_token_id)
         prompt_tokens = torch.as_tensor(question_tokens).unsqueeze(0).long().cuda()
         decoded = generate(prompt_tokens, args)
-        print("question is"+ tokenizer.decode(question_tokens))
         gen_data_text[index]['generated_answer'] = decoded[0]
         print(decoded[0])
 

@@ -14,10 +14,9 @@ from transformers import set_seed
 
 from args import get_args
 from transformers import AutoModelForCausalLM
-from transformers import AutoTokenizer
 from peft import PeftModel
 
-from dataset import get_dataset
+from ssg_llama2.dataset_original import get_dataset
 
 from utils.tokenizer import Tokenizer
 
@@ -68,7 +67,7 @@ def generate(
         next_token = next_token.reshape(1, -1)
         tokens = torch.cat([tokens, next_token], dim=1)
         
-        if next_token[0] == tokenizer.eos_token_id:
+        if next_token[0] == tokenizer.eos_id:
             break
     tokens = tokens.tolist()
 
@@ -79,7 +78,7 @@ def generate(
     for i, t in enumerate(tokens):
         # cut to eos tok if any
         try:
-            t = t[: t.index(tokenizer.eos_token_id)]
+            t = t[: t.index(tokenizer.eos_id)]
         except ValueError:
             pass
         decoded.append(tokenizer.decode(t))
@@ -98,12 +97,11 @@ if __name__ == "__main__":
     print('='*89);pprint(args.__dict__); 
     set_seed(args.seed)
     
-    # 指定模型名称和缓存路径
-    MODEL_NAME = "meta-llama/Llama-2-7b-hf"  # 你的 LLaMA 模型名称
-    CACHE_DIR = "/data/milsrg1/huggingface/cache/tl578/cache"  # 指向你的缓存目录
-    # 使用 AutoTokenizer 直接从缓存目录加载分词器
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR)
-    base_model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map='auto', cache_dir=CACHE_DIR)
+    tokenizer = Tokenizer(model_path='ssg_llama2/statics/debug.llama2_7b/tokenizer.model')
+    base_model = AutoModelForCausalLM.from_pretrained(
+        'ssg_llama2/statics/debug.llama2_7b',
+        torch_dtype=torch.bfloat16
+    )
     print("Loading the lora model...")
     lora_model = PeftModel.from_pretrained(base_model, pjoin('ssg_llama2/alog', args.exp, 'best_model'), torch_dtype=torch.bfloat16)
     print("Merging the lora modules...")
@@ -125,10 +123,9 @@ if __name__ == "__main__":
 
     for index in tqdm(all_index):
         question_tokens = gen_data_token[index]['question']
-        question_tokens.insert(0, tokenizer.bos_token_id)
+        question_tokens.insert(0, tokenizer.bos_id)
         prompt_tokens = torch.as_tensor(question_tokens).unsqueeze(0).long().cuda()
         decoded = generate(prompt_tokens, args)
-        print("question is"+ tokenizer.decode(question_tokens))
         gen_data_text[index]['generated_answer'] = decoded[0]
         print(decoded[0])
 

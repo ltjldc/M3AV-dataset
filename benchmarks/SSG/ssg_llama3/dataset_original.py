@@ -17,7 +17,7 @@ set_split = json.load(open('ssg_dataset/sample_set_split.json', encoding='utf-8'
 
 from transformers import AutoTokenizer
 # 指定模型名称和缓存路径
-MODEL_NAME = "meta-llama/Llama-2-7b-hf"  # 你的 LLaMA 模型名称
+MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"  # 你的 LLaMA 模型名称
 CACHE_DIR = "/data/milsrg1/huggingface/cache/tl578/cache"  # 指向你的缓存目录
 # 使用 AutoTokenizer 直接从缓存目录加载分词器
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=CACHE_DIR)
@@ -46,7 +46,7 @@ def get_dataset(data_split, args, raw_text=False):
             if raw_text:
                 process_fn = lambda sentence: c(sentence)
             else:
-                process_fn = lambda sentence: tokenizer.encode(sentence, add_special_tokens=False)
+                process_fn = lambda sentence: tokenizer.encode(sentence, bos=False, eos=False)
             speech_tokens = process_fn(unit['speech_text'])
             ocr_tokens = process_fn(unit['ocr_text'])
             if args.paper:
@@ -74,8 +74,8 @@ def get_dataset(data_split, args, raw_text=False):
 
 def build_input_from_segments(instance, args):
     """ Build a sequence of input """
-    instance['question'].insert(0, tokenizer.bos_token_id)
-    instance['answer'].append(tokenizer.eos_token_id)
+    instance['question'].insert(0, tokenizer.bos_id)
+    instance['answer'].append(tokenizer.eos_id)
 
     instance["input_ids"] = list(chain(instance['question'], instance['answer']))
     

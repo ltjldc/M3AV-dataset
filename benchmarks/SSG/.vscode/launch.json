@@ -1,0 +1,83 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug llama3_rel_cov_evaluator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/llama3_rel_cov_evaluator",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "2stage eval",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/llama3_obj_2stage_evaluator.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${command:pickArgs}"
+            ]
+        },
+        {
+            "name": "Debug llama3_obj_evaluator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/llama3_obj_evaluator.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${command:pickArgs}"
+            ]
+        },
+        {
+            "name": "Debug llama3_subj_evaluator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/llama3_subj_evaluator.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug shorten",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/shorten_generated_answer.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${command:pickArgs}"
+            ]
+        },
+        {
+            "name": "Debug test llama2 gen",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama2/generate_test.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug llama2 gen",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama2/generate.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--exp",
+                "l2p"
+            ]
+        },
+        {
+            "name": "Debug llama3 gen",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/direct_generate_3.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--exp",
+                "l2p",
+                "--task",
+                "l2p"
+            ]
+        }
+    ]
+}
