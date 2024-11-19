@@ -1,0 +1,354 @@
+[
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0239000.jpg",
+    "ocr_text": "Cell division and nuclear organization in\ndevelopment and aging\nCARNEGIE SCIENCE\nDepartmentof Embryology\n3520 San Martin Drive | Baltimore, MD 21218-2440",
+    "speech_text": "It is my great pleasure to introduce today's Wednesday afternoon lecturer, Dr. Yixian Zheng, Dr.. Zheng is the chair of the Department of embryology at Carnegie Institution For for Science in Baltimore. and she's interim co-president of the Carnegie Institution. She's also an adjunct professor of biology at Johns Hopkins. Dr. Zhang earned her bachelor of science degree in biology from Sichuan University, where both of her parents taught. She's the daughter of two academics, but grew up during the cultural revolution in China, and so had some interesting experiences. And I was actually just listening to a video that she made about how she became a scientist, and it is fascinating. After her undergraduate education, she moved to the United States To study with Burl Oakley at the Ohio State, Ohio State University, where she got her Phd in molecular genetics and then she did a post doc at. UCSF with Tim Mitchison and Bruce Alberts, where I suspect she got interested in microtubules. She was recruited to the Carnegie Institution in 1996, where she works on a variety of issues related to the The cellular cytoskeleton and mitosis, nuclear function and issues related to microtubules lamin. aging, morphogenesis, cell division, and disease. Probably partly because of her upbringing in China, where she grew up wanting to be a great writer, she's produced a series of really elegant scientific papers describing her journey through the microtubule organizing centers, including her initial discovery that gamma tubulin was well-conserved in all eukaryotes. And she discovered the gamma tubulin ring complex as an important initiator and organizer of microtubules, no matter what their function in eukaryotic cells. She's gone on to make many other discoveries as well. Dr. Zhang was a Pew scholar, Howard Hughes Medical Institute investigator for over a decade. And the winner of the Ascb Women in Science award, She has served the scientific community in many different ways and. and been recognized for her service as a council member for the American Society of Cell Biology, chair of the International Affairs Committee for the American Society of Cell Biology. And she's a national associate of the Nrc Council for the National Academy of Sciences, which is an honorary lifetime appointment for extraordinary service. And she's a Senior Scholar on Aging for the Ellison Medical Foundation. Today she will talk about her research on Cell division and genome organization in development and aging, please join me in welcoming Dr. Zhang. Very much. Thanks Michael for such a nice introduction and thanks my to my host Yamini for arranging this. amazing opportunity to come here, talk to people from the broader scientific community at NIH. So I'm just going to try to dive in. Where is my oh, here. So what I'm going to do is I'm going to try to give a big, to give highlights on the work, that being that has been published. And then I'll spend the last ten or so minutes mostly focus on focusing on some of our most recent",
+    "start": 3.0,
+    "end": 239.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0307000.jpg",
+    "ocr_text": "The nucleus and cytoplasm connection\nNesprin\nActin\nEmerin\nNM\nCytoplasm\nER\nRibosome\nMTOC\nONM\nMicrotubule\nRanGTPase\nGolgi\nMAN1\nLamin- binding protein\nNuclear lamina\nNuclear envelope\nLamins\nGruenbaumet al., Nature Rev Mol Cll Biol (2005)",
+    "speech_text": "work on genome organization. Okay. So here it basically shows you a picture of our building. Our department is pretty small. We have eight faculty plus two staff associates, but it's a pretty amazing department to be in, so I'm a cell biologist. I start my career. Trying to understand how cytoskeleton work, mostly focus on focusing on microtubules. these are interface cells. and it really depicts the complexity of the interface cell with so many connections of nucleus. And this is a nuclear lamina that interacts, connects chromosomes through the inner and Chromosomes with through the inner and outer nuclear envelope, proteins to various forms of cytoskeleton, and then of course, membranes are also. very highly connected to one another. So the thing for me when I start my career is really trying to understand sorry, I need to go back a little bit trying to understand how, you know, you really handle when you want to go into cell division, how you go from one cell to",
+    "start": 239.0,
+    "end": 307.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0344000.jpg",
+    "ocr_text": "Outline\nMitotic spindle matrix in cell division\nNuclear lamins in\ntissue building\naging\ngenome organization & transcription",
+    "speech_text": "two cells. So a lot of what I'm going to talk about actually stem from our interest in cytoskeleton. So what I want to do is to first give you a highlight on our study of mitotic spindle matrix in cell division. And then I'm going to Spend most of my time talking about nuclear lamins by highlighting some some of our studies on how nuclear lamins are involved in tissue building. and in aging and spend More focused time on how lamons are could really regulate 3d genome organization, which in turn influence transcription",
+    "start": 307.0,
+    "end": 344.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0407000.jpg",
+    "ocr_text": "Cellular Organization and Partition in Mitosis\nOF0\nChromosomes\nsegregation\nMicrotubules\nspindle morphogenesis\nNuclei\nlamina disassembly envelope breakdown\nlamina reassembly envelope reassembly\nMembranes\ndisassembly of Golgi ER re-organization\nreassembly of Golgi enhanced exocytosis\nGoigi haze\nActin\nremodeling",
+    "speech_text": "globally. Okay, starting from the beginning of my career. So I was as I said, I was very interested in microtubules And how microtubules build in is built into a bipolar spindle? In the field for decades have been mostly interested rightfully so. Focused on understanding how microtubules nucleated from the centrosomes capture the kinetochores and then ensure equal chromosome segregation and make two cells. But you know when I started my own career, I felt like there probably is really a need to try to understand about cell division. that's beyond how microtubules capture chromosomes. Because cell division is really not just segregating chromosomes. You need to segregate so many other things. There's massive changes of the nucleus, nuclear cellular membrane, including nuclear membrane. The nuclear laminate disassembles. and then it reassembles. So this reorganization really was much less understood. So",
+    "start": 344.0,
+    "end": 407.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0488000.jpg",
+    "ocr_text": "The Strategy to Study Mitosis\nStudy potential mitotic regulators with known interphase roles\nDefine their mitosis-specific roles using Xenopus egg extracts\nThe Assay:\nXenopus Egg Extract\nSperm Nuclei\nSperm Aster\nSpindle",
+    "speech_text": "when I start my lab, we've decided, okay, let's just see if we could broaden mitosis research to include other is really what if they really have interface functions? How can you separate the interface function away from mitosis function? And we are lucky because there is a system that was developed in the seventies by people like Masui and Luca Luca. They were, They showed that you can take xenopus sperm. You can isolate them. put it into xenopus eggs, and then at the tip of. At the tip of the sperm there is the centriole that will recruit materials to mature into center zones, make esters. And then with time chromosomes condense make mitotic like condensed chromosomes, and then mitotic spindle can be established. Because this is an immature system, you can actually make antibodies and deplete proteins from it, and then. ask what happens to this process. And if you see a defect, you can try to rescue it and then see if this defect is really caused by the protein. So even if your protein has an interface function, you don't really You can say it also has metatic function, because the system never really gone into interface, so this had turned out to be very",
+    "start": 407.0,
+    "end": 488.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0533450.jpg",
+    "ocr_text": "Interphase Nuclear and Membrane Proteins\nRegulate Mitosis\nMembrane-Associated Proteins Epsin, p97/Cdc48, FAM)\nNuclear Proteins (RanGTPase, Lamin-B, RuvBI1/2)\nSpindle Mitotic membrane Chromosome Segregation\nInterphase Nucleus\nSpindle Chromosome Segregation\nInterphase Membrane\nWilde&Zheng, Science(1999) Wiese et al., Science2001) Li&Zheng.Genes&Dev2004) Tsai et al., Science 2006) Ducat et al., MBC2008\nCao et al., Cell2003 Vong et al., Science2005) Liu and Zheng, JCB(2009)",
+    "speech_text": "productive productive for us. Using this system, we have been able to establish many nuclear proteins, as a few listed here, Ran-GTPAs, Lamin B and Ruv, which is actually a chromatin remodeler. They have very well-established interface functions, but they also regulate mitotic spindle in various ways. And so are Some membrane proteins, as listed here, Epsin, P97, Cdc 48, and Pham Pham, actually is a another name for a D. Deubiquitinating enzyme called D, U, B, S, Usp, nine x, So. these proteins have interface functions, and then when cells go into mitosis, they have mitotic functions.",
+    "start": 488.0,
+    "end": 533.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0587000.jpg",
+    "ocr_text": "A Mitotic Network of Nuclear and Membrane Proteins Orchestrates Cell Division?\nNuclear Envelope Breakdown\nPrometaphase\nMetaphase\nRanGTP\nRanGTP\nChromosome Centrosome\nMicrotubule Importins\nMitoticER Other membranes\nZheng.Nature Rev Mol Cell Biol,2010",
+    "speech_text": "So then kind of the question is why you have so many moonlighting proteins in both the nucleus and the light is kind of shining on my eyes in both the so many nuclear proteins as well as membrane proteins regulating mitosis. I think it really comes back in a way addressing the initial question I posed, That is when you think about cell division, you. if you think beyond equal chromosome segregation, what you have left is how do you segregate the rest of the cell? Is that completely random? you vesicularize? You just dissolve and have it equally equally distributed or actually beyond microtubules. You have another network. that needs to be organized around the spindle and permeating throughout the spindle. That's how you can actually properly divide them to prepare the cell for the next cell cycle and for various things in the next",
+    "start": 533.45,
+    "end": 587.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0705000.jpg",
+    "ocr_text": "The Elusive Spindle Matrix\nSpindle from Sea Urchin Eggs\nThe Hypotheticai Spindle Matrix\nchromosome\ncentrosome\nmicrotubule\nspindle matrix\nGoidman and Rebhun, J Cell Sci (1969)\nSpindle Matrix:\nSpindle Matrix (Nuclear remnants, membranes?)\nMicrotubules\nregulates spindle morphology\nCell Division\ninteracts with microtubules\nChromosome & cellular contents, important for tissue building",
+    "speech_text": "cell cycle the cells might want to do. And in fact, in mitosis field for years, for decades, starting in the 60s, Bob Goldman and colleagues were one of the first to propose maybe mitotic spindle is not just made of microtubules in terms of its structure, and here is a sea urchin spindle under EM. So these are fibers of microtubules, but beyond this microtubule-like fiber, there are these granular structures surrounding the spindle, And then actually, in some other ems, you can see electron dense materials permeating throughout the spindle. So this is where the spindle matrix idea came from, but it was never been. It has never been popular. people come in and out. this is not really even a field, but it seemed to really make sense that if you want to build such a complicated structure to divide the cell, you probably need things beyond the microtubules, you probably need to organize cells with another way to kind of make the cell division to happen effectively. So the kind of Initial idea has been. you know, Maybe mitotic spindle, this mitotic spindle matrix could. Could regulate spindle morphology, it could interact with microtubules to make the spindle much more effective. So now after we realize actually the. The cellular, other cellular components, such as nuclear remnants and membranes could be playing a role in mitosis. So the hypothesis is really, perhaps the mitactic spindle matrix is is really the way the cell uses to organize this materials. to crosstalk with microtubules to ensure proper chromosome segregation and perhaps even Proper cell fate determination, and indeed we have been able to look at this, and that's something. I'm going",
+    "start": 587.0,
+    "end": 705.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0762450.jpg",
+    "ocr_text": "A Spindle Assembly Assay Using Aurora-A Beads\nXenopusEgg Extract\nRanGTP\nAurora-A Kinase Coated-Beads\nSpindle\nAster\nTsai &Zheng, Curr Biol2005): Goodman et al., JBC2010)",
+    "speech_text": "to talk a little highlight more. Okay, so to really get the handle on what are these spindle matrix materials? what kind of proteins are in them? A former post doctoral fellow means high had devised a very nice assay. Which is this? Putting Rra, which is a kinase, metatic kinase onto the magnetic beads, and if he puts this magnetic beads in zenapusic extract. Adding Rang Gtp, he's able to induce aster formation very quickly in the 1st. Let's see in the 1st. Three in the 1st 3 min, and then by 15 min you get very nice bipolar spindle assembly, So this is so you can see aster. This is a just a low resolution view. You can see the spindle assembly. It's It's a wide wider view. This is a. a close-up. The advantage of this is then you can use",
+    "start": 705.0,
+    "end": 762.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0855000.jpg",
+    "ocr_text": "The Proteome of The lsolated Spindle Matrix\nDepolymerize Microtubules\nRanGTP\nXenopus Egg Extract\nAurora-A Kinase Coated-Beads\nMatrix\nSpindle\nTotal ~600 proteins\nEg5 (kinesin) XMAP215 Maskin DasraA\nBubR1 γTuRC Rae1 Sas6\ndynein Stathmin/Op18 Ninein-like protein Katanin\nSpindle Assembly Factors(SAF\nCollaboration with John Yates Lab\nPAK-2 PAR-3 c-Abl SHC1\nRhoGAP3 IGF-like receptor Toll-like receptor 1 Crumbs homolog\nJagged-2 Sprouty-2 TGF-β5 Dishevelled\nSignal Transduction\nNup358 Smad1 NFKB ISWI\nSox2 Oct1 lamin B ZFPsBuGZ) Epsin Eps15 Sar1 Archain\nPolycomb Pc1 RanGAP1 Importin alpha HDAC1\nTranscription &Nuclear\nreticulons Calreticulin Arfaptin-2 ArfBP1\nStam2 Rab-1 Rab-14 Rab-GDI β\nMembrane Trafficking",
+    "speech_text": "this to isolate the spindle by putting the reaction on a magnet, and then it would collect the magnetic beads, and then And then you just wash the spindle with no cortisol, that diplomaized microtubules and what you have left would be the spindle matrix. And we just did protein analysis in collaboration with John Yate's lab, and that led us to find about 600 proteins. and the major criticism of this work really has been, well, we found a lot of things, well, we We actually hypothesize there ought to be a lot of things, but people, biologists generally like to see that things that's pure. And if we see a lot of things, a very obvious suspect is. Well, you just isolated the cell, And you, you have not done much. Maybe you've. isolated something that's aggregated, so, but we just decided to forge forward and see what we get, And one thing we we spent time on is Lamin B. because we thought this, this, This is a network and probably have some. Structures and lamon B is an intermediate filament protein, so perhaps it could provide some structure to it. We also focus, and this is actually how we studied Epson, and then I'm going to today. I will just mostly talk about Lamon B and then other protein called. It's a zinc finger protein. We call it bug Z. I will give you some highlights on our findings",
+    "start": 762.45,
+    "end": 855.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0933450.jpg",
+    "ocr_text": "The spindle matrix protein lamin-B in mitosis: centrosome separation, spindle orientation, spindle morphology\nChromosome centrosome 7.1μm\nWild-Type\nLB2Null\nLB DKO\nLB1Null\nWT\nlamin null\nParallel(90°)\nPerpendicular(0°)\nOblique(<90°)\nTsai et al., Science (2006).Ma et al.Nature Cell Biol (2009) Porier et al., Biophys J (2010), Goodman et al., JBC (2010) Kim et al., Science (2011), Guo et al., MBOC (2014). Guo et al MBOC (2015)",
+    "speech_text": "about this two proteins role in. Spindle assembly, and so for Lamin B. What? Over the years, and these are the public published work I'll just summarize over the years we've seen that. The spindle matrix protein lamin B, They, they are in spindle matrix, and it seems to be interacting with dyneins. to help for a number of functions. One function is centrosome separation during the beginning of Spindle assembly in prophase, so if you have nominal cells, the centrosome don't separate quickly. It also seems to be involved in spindle orientation, and one example is in the ventricular zone in the neuronal progenitor cells, If you have lamin mutations, lamin beam mutations, the spindle, don't you end up finding a lot of oblique orientations when actually should? Find either perpendicular parallel or perpendicular orientations. We also using xenopus egg extract. We showed if you don't have lamin B, you have spindle morphology defects, and it seems all of these functions had to do with the interaction between lamins. And diming system that that's the best explanation for these phenotypes, So the problem",
+    "start": 855.0,
+    "end": 933.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-0981450.jpg",
+    "ocr_text": "What is the spindle matrix structure?\nHeLa Cell Spindle\nSea Urchin spindle and matrix\nLamin-B\nBuGZ\nGoldman and Rebhun, J Cell Sci (1969)\nMicrotubules\nNo discernable filamentous structure under EM. Haze on and surround the spindle microtubules by fluorescence microscopy.\nCan any spindle matrix protein form polymers?",
+    "speech_text": "we have. Over the years has always been that you know this Lam, Mb, or the other spindle matrix protein that I will talk about soon. When you look at it, it's really not like. My. My microtubules microtubule look really beautiful, whereas Lemon B looks hazy. It's both in the cytosol and it's on the spindle, and then this other spindle matrix protein is also, you know, it's enriched on the spindle, but it's also kind of hazy, And we've really not succeeded to identify any discernable filamentous structure under Em. So, then it's really hard to move forward to really understand if the structural feature of this, is there a structure or is it just some random aggregates? So, that has been the biggest problem we had faced.",
+    "start": 933.45,
+    "end": 981.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1074000.jpg",
+    "ocr_text": "The spindle matrix protein BuGZ\nxBuGZ\ndisorder P-FIT VSL2B VL3 -VLXT low- complex LC1 LC2 LC3\nDisorder disposition\nZnF 500\nThe N-terminal two zinc fingers bind to tubulin and microtubules The C-terminal GLEBS motif binds and stabilizes Bub3 Promotes chromosome alignment in mitosis\nJiang et al Dev Cell (2014) BuGZ can be made in large quantities as soluble protein!",
+    "speech_text": "So, but we were pretty lucky in the sense of Having identified this protein called Bug Z, so this is a spindle matrix protein we identified as Bug Z. I'll just give a little bit background. That's published in this paper. We found this protein Have a well Here Here is basically a plot of this protein. The n terminus this little bit, so this is the disorder disposition. So anything below .5 is our. Ordered considered ordered, anything above that is disordered, and as you can see this, this region is highly ordered and in fact, this corresponds. And in fact, this is corresponds to predicted two zinc fingers. What we found is this region bind to tubulin and microtubules. And at the C terminus, it's essentially largely disordered, but it has a very interesting motif called Glib's motif, which is the motif that binds to. Proteins such as Bub three, Bub Three is a kinetochore protein that regulates chromosome alignment and chromosome segregation. So, basically, through these studies, we've defined that Bug Bug Z, in mitosis definitely has a role in regulating chromosome alignment by binding and stabilizing Bub three. So this is? This is basically one function in mitosis. But the real interesting thing about it is that there is this really large disorder region. and then we are very, we are able to make a large quantity of soluble proteins that offers as a means to do biochemistry, And why that could be so",
+    "start": 981.45,
+    "end": 1074.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1179000.jpg",
+    "ocr_text": "Hydrogels and liquid droplets, protein polymers formed via phase transition\nElastin (60s)\nNup FG repeat fragment\nPRM4 SH34\nFrey et al.2006\nFUS low complexity region\nGST\nmCherry\nGFP\nLi et al 2012\nMuiznieks et al2013\nAromatic residues (F and Y) Hydrophobic residues Polar and charged residues\nKato et al.,2012",
+    "speech_text": "interesting? Well, that's because, in addition to this solid polymer, such as actin and microtubules. you've got other polymers. I'm sure many of you have heard the hydrogel and the liquid droplets, and these polymers have water in it. Hydrogel has water in it, and then this liquid droplets have even more water and even more dynamic structures, And these features are now people. It's a vibrant field now. These are called membranous organelles that could help organize the cell, and it really makes sense to us if you think about spindle matrix because when you go into mitosis, many membrane Bounds systems actually become vescularized but you still need to organize the cell. Perhaps mitaltic spindle matrix could be a. Membranous and there are features of membranous organelles, and then most of these systems actually are formed. most of these like hydrogel and liquid droplets are formed by a weak multivalent interactions Of proteins that either forms have this repeats that can interact or they, they have low complexity. And they are disordered proteins, and the way they actually interact. Is still not very well understood in its polymerization, but it's known that aromatic residues, such a thing, such as phenylalanine and tyrosine, or hydrophobic residues, or polar or charged residues. They can all drive the formation of of this phase separated state, so this is called phase transition or phase separation. So now",
+    "start": 1074.0,
+    "end": 1179.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1276000.jpg",
+    "ocr_text": "BuGZ sequences\nZnF\nNLS\nZnF\nMouse\nXenopus1",
+    "speech_text": "I want to show you what Bug Z looks like, Bug Z. Really, So here is the two zinc fingers. And if you look at Bugsy, it essentially has everything I've just listed. It has phenylanine tyrosine throughout the molecule, About 13 of them. So this top is mouse bottom is Xenopus bug Z. In addition to that, it has a lot of prolines. And what's interesting is every proline seemed to be really happening right next to be to highly hydrophobic residues. throughout the molecule, so the molecule is fairly hydrophobic, yet it's very soluble, and we think probably the proline is preventing it to completely collapse, so this gives us a sense maybe this protein would form structure not like a solid polymer that we were trying to look for. Maybe it's actually forming some kind of phase separated state that could function in in the spindle matrix indeed. we've tested many conditions because we have charged molecules. Well, one thing I didn't show you, let me just go back quickly to show you, is that In addition, you can you can see this highlights. so this is proline. Rich, regions generally is fairly hydrophobic. Those are highlighted in green. And then you have other regions that's actually pretty polar concentrated with polar molecules, And then this is pretty charged regions. So that's what this protein looked like? Two regions of proline, rich and hydrophobic, Two regions are charged or or hydrophilic. so it's kind of hard to predict what kind of phase separation characteristics it",
+    "start": 1179.0,
+    "end": 1276.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1324000.jpg",
+    "ocr_text": "BuGz undergoes concentration and temperature dependent reversible phase transition\n25μM YFP-xBuGZ\nXB buffer\nPBS buffer\nYFP-xBuGZ 12.5μM\nYFP-xBuGZ 25μM\n1st 2nd\nTemperature(°C)\nTemperature(°C)",
+    "speech_text": "would have, and through a lot of work, we realized it actually undergoes phase separation in a concentration and temperature dependent manner. It's kind of like this elastin protein, so basically, if you Increase the temperature, increase protein concentration. It will form this beautiful droplets. This is a fusion protein between Yfp and Bug Z, and it's highly reversible. Of course, there's a little bit, not completely depulmarizing, but it's really repeatable and reversible. It's a very nice phase separation protein. and when this was found, actually, this is the first protein that you have a protein, native protein, a full lens that undergoes phase separation besides elastin, although a lot of studies on elastin is using fragments, and this protein by itself",
+    "start": 1276.0,
+    "end": 1324.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1373000.jpg",
+    "ocr_text": "Efficient BuGZ phase transition requires Fs and Ys\nxBuGZ\nBuGZ phase transition mutantsare defective in supporting spindle and spindle matrix assembly\nxBuGZΔN\nxBuGZ5S\nxBuGZ13S\nLog 10 concentration(μM)",
+    "speech_text": "undergoes phase separation, so we did quite a bit of mutagenesis and then tried to measure the mutagenesis on phase separation because people have already found Found in some other phase separated proteins, you can actually mutate the phenylalanine and tyrosine, so we muted different amounts of phenylalanine. Phenylanine and tyrosine, and we also got rid of the n terminus to look at the impact on phase separation, and the take home message really is that. Bug, Z, phase separation mutant are defective in promoting spindle and spindle matrix assembly, so. That, that's kind of nice because that at least says well, there is a structure the spindle matrix could be in part. That the structural integrity could be in part mediated by phase separation?",
+    "start": 1324.0,
+    "end": 1373.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1444000.jpg",
+    "ocr_text": "BuGZ phase transition concentrates tubulin and promotes microtubule assembly and bundling\nYFP\nTubulin\nDIC\nTubulin 5uM Tubulin 10uM Tubulin 20uM Tubulin 30uM\nYFP-xBuGZN15M YFP-BuGZ 15M\nTubulin 5M+Nocodazole\nMT number\nnsnsns\nnsns\nxBuGZ M) YFP-xBuGZ\nMerge\nTubulin",
+    "speech_text": "Okay, so I'm just going to try to end this. By kind of providing a few one, one way that we believe bugz could promote spindle assembly is that. As I said, the n terminus of bug Z bind to tubulin, and when you form phase separated state, you can see a very nice concentration. of tubulin, and when you get rid of the N-terminus so you don't bind tubulin, it doesn't concentrate tubulin, And if you use this two mutant to try to do microtubule nucleation assay, you can see that this microtubule tubulin binding is very important. For microtubule assembly, in addition, Uh, tubulin binding is also very. The microtubule binding site is also microtubule binding site. and that's very important for bundling, making microtubule bundles, and you can see in this field you have microtubule polymer, and you have The bug Z. It's just like liquid flowing along the microtubules, so I, I think this kind of bundling probably is pretty. Flexible and that probably is important for you to glide microtubules apart because it's not a solid solid to make microtube bundle, microtubule bundle",
+    "start": 1373.0,
+    "end": 1444.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1542000.jpg",
+    "ocr_text": "A model\nPhase transition along microtubules during spindle assembly\nIn vitro phase transition\nlow temperature\nhigh temperature\nMT/tubulin binding\ntubulin MT\nBuGZ\nunstructured\nJiang et al Cell 2015",
+    "speech_text": "in a. very big, solid state. Okay, so this is basically the take-home message. I'm jumping a lot because I want to go to Other things I want to talk about, so basically the take home message is that bug Z undergo in vitro. Face separation, and this blue region is microtubule tubular binding site, and red region is unstructured red region. The hydrophobic residues, and also those aromatic residues are important for phase separation the reason we. think hydrophobic residue is important is when you increase the temperature, it's kind of a denaturation, so that kind of stretches the molecule. It basically prevents intermolecular interaction, promote intermolecular interaction. In fact, we've mapped the regions Of that of the molecule that can interact with one another, so it promotes intermolecular, weak, bivalent interactions, And that's what's driving phase separation. Now, when you have microtubules, the microtubule really helps promoting phase separation along microtubules. You can see microtubule droplets along the Bugz droplets along the microtubules, and because bugz could concentrate tubulin and could bundle. Microtubules, that really is one of the reasons it can promote spindle assembly, so that's the one function. And more recently we found Bugsy also can concentrate a right kinase and help activating all right in mitosis. That can also. contribute to spindle assembly. Okay, so that's the highlight of the mitosis",
+    "start": 1444.0,
+    "end": 1542.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1548000.jpg",
+    "ocr_text": "Outline\nMitotic spindle matrix in cell division\nNuclear lamins in\ntissue building\naging\ngenome organization & transcription",
+    "speech_text": "study that we're doing in the lab. Now I'm going to switch gear to talk about nuclear lamins, and I'm",
+    "start": 1542.0,
+    "end": 1548.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1711000.jpg",
+    "ocr_text": "The nuclearlamina.\na node connecting to many functions\nChi et al J.Biomed Sci 2009\nMicrotubule\nNespnn\nLAP2\nMAN1\nEmerin\nLamin\nBAF\nBAF\nBAF\nSUN1/2\nMitosis\nInterphase\nChromatin\nLamins are the maior structural components of the nuclear lamina\nMouse: 2B-typeiamins,1A-typeiamin\nDrosophila: lamin-BLAM, Iamin-ALAMC",
+    "speech_text": "going to first highlight the role of nuclear lamins in tissue building. So As I said, really, it's our study of mitosis, realizing Oh, lamin actually interact with microtubules. Not us to pay attention to Laman's role in interface. I was not interested in interface at all in the beginning of my career. What really caught my attention is. Oh, this system is actually quite amazing in interface. lamins form this polymer right underneath the nuclear membrane. and this meshwork interacts with microtubules, interacts with the chromosome on one hand, and then through these nuclear envelope proteins, it's connecting chromatin in with cytoskeleton, and that to me is quite amazing. It's almost like it's very similar in concept of how the cells are, you know. You use similar concept to solve the interface and mitotic problems, and this, in this case, it probably could be organizing interface chromatin. and in this case, it's making sure you can organize spindle to separate the chromatin. So I see that to be very interesting. That's one reason we started to want to look at Lamin, because you know this connection is quite interesting, so here I already had it. As written down, as lamins, are major structural component of the nuclear lamina, and most are multiple. Lamins B, type two, B, type one, A type, Drosophila has one B, type one, A type, the problem when I. 1st, when my lab 1st started to pay attention to lamon. Really one problem that really is is lamon. Many people really believe lamin is absolutely essential for animal cells. If you don't have lamin, you probably won't have a good nucleus. You probably won't. Be able to have a cell so that's and then our contribution of understanding that lamins also plays a role in. Mitotic state, that kind of further strengthening lamin is really very important for cell proliferation, therefore, for basic cell survival. But if you really look at the literature, it's really not clear that Lamin plays such a kind of a role because there's a lot of redundancy. People did some Rnai work or genetic work If you look at the, even if when you look at C, elegance, there's only single lamin gene. you still have maternal supply. So it's, basically, the literature tells us it's not really certain lamin is absolutely essential for cell function. And the way When, when, when we appreciated that lamin's role here really is connecting chromatin to cytoskeleton. It's kind",
+    "start": 1548.0,
+    "end": 1711.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1720000.jpg",
+    "ocr_text": "Are Lamins Essential for Cell Viability?\nStructural Roles\nVertebrate\nSpindle orientation(our study)\n2 B-type lamins 1 A-type lamin\nNuclear structure\n3D-chromatin organization\nRegulatory Roles Directly regulate bound genes DNA replication\nDrosophila: Iamin B Iamin A Maternal supply\nC. elegans:\nCell Proliferation and Survival\nSingle lamin gene Maternal supply",
+    "speech_text": "of indicating maybe lamin is involved in kind of morphogenesis, because cytoskeleton are involved in morphogenesis. So, what",
+    "start": 1711.0,
+    "end": 1720.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1773000.jpg",
+    "ocr_text": "Derivation of Embryonic Stem Cells(ESCs) Lacking All Lamins\nBlastocyst\nTotipotent Morula\nOocyte\nSperm\nPluripotent Inner Mass ells\nESCs\nMouse has three lamin genes: Imnb1, Imnb2, Imna\nCreate knockout (KO) mice of Imnb1 and Imnb2 Derive mouse ESCs from double lamin-B null blastocysts\nFurther deleted Imna in the lamin-B DKO ESCs to create TKO ESCs Kim et al., Science (2011). Kim et al., Cell Research (2013)",
+    "speech_text": "a very talented and brave postdoctoral fellow came to my lab, but he decided okay. I'm just going to see if I can create a any cell that would can be laminal. And that will demonstrate whether lamin is essential or not essential. And he started with Es cells. And the reason I say he was brave is because. many seminar speakers came through my department when I told them that's what we're doing. They were saying, well, what are you going to learn if you don't get any cell? You would You would just learn. Okay, lamins are essential, but you know we just forged forward. He, in his time, he just did very standard mouse knockout, created double knockouts of B, one lamin, B1b2 derived Es cells. Used two rounds of deletion to get rid of lamin A, and he was able to generate lamin Tkl,",
+    "start": 1720.0,
+    "end": 1773.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1824000.jpg",
+    "ocr_text": "Lamins are required for proper organogenesis\nLamin-B-/-\nWT\nWT\nLamin-B-/-\nLam B\nLam B\nLam\nW",
+    "speech_text": "Es cells, and that was. you know, a very definitive answer that lamin is really not essential for basic cell function, at least not in ES cells. And the other thing is, once you have this mouse model, you can really look at the lamin in different organs, and the major take home here is. Every work organ we looked at there are defects. The brain is most dramatically affected. And but it's very hard to try to get that the mechanism using mouse, so another postdoctoral fellow came to my lab. Now probably five, six years ago, he said, Well, I'm going to use drosophila as a system because it's much faster. He focused on testes. So this is the phenotype? Basically is there's one lemon. Lamin B type lamin in Drosophila, and when you don't have that B type lamin, the testes is very small compared to the",
+    "start": 1773.0,
+    "end": 1824.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1914000.jpg",
+    "ocr_text": "Lamin-B regulates cyst stem cell morphogenesis and the building of testes\nGFP Vasa\nGFP Vasa\nWild type\nLam Ko\nControl\nLamin-B null",
+    "speech_text": "wild type and. I will just quickly highlight what he's done, so what Haiyang has done. So basically, this is a tip of the testes. And at the tip of testes, you have three types of cells, the hub cells that supports the germline stem cells, and also the cyst cells that support the germline stem cells. As the germline stem cells divide to form germ cells and further forming the sperm, the The cyst cells, the cyst stem cells stop dividing and they start to expand tremendously to enclose these expanding germline. Germ germ line cells, so this expansion basically is a very important morphogenesis if you don't have that. The testes won't work. So what Haiyang has found is that actually lamins play a specific role in this cyst stem cell. And the cyst cells, And if you get rid of it, so this is actually a illustration of using Gfp knock in to mark. the wild type cell and the mutant cell. As you can see, wild type cell expands its processes to enclose the germline cells, whereas The mutant basically could not expand. the morphogenesis fails, and then cyst cells don't enclose the germline cells, and then. The spermatogenesis fails so. That's",
+    "start": 1824.0,
+    "end": 1914.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1985000.jpg",
+    "ocr_text": "Lamin-B in the CySC Lineage Ensures Nuclear EGF Signaling via Specific Nucleoporins(Nup153\nop-Erk Erk PEGFR/EGF\nLamin-B\nNucleoporin 153 Nuclearenvelope\nThe Drosophila A-type lamin can partially compensate lamin-B in the CySC lineage\nChen et al Cell Stem Cell, 2013",
+    "speech_text": "really a very dramatic demonstration of how lamins are involved in morphogenesis, and actually the mechanism. Haiyang has illustrated is that if you don't have B type lamins in these cyst cells, that the nucleopore complex. The nucleopore protein called the nucleoporin 153, gets aggregated around the nuclear periphery, and then when that happens, then the. Nucleus are not able to retain the phosphorylated arc. It turns out you need proper localization of nuclear pore and 153. In order to retain phospho arc in the nucleus, and phospho arc is very important for this cis cells to. undergo its morphogenesis. So that's really the mechanism. That's what we have found to be the mechanism. So that basically shows Shows lamin could use one mechanism, such as ensuring nuclear pore component proper localization of nuclear pore component. Therefore, proper localization of phosphorylated irk in the in the nucleus to ensure cell morphogenesis, which then help organogenesis.",
+    "start": 1914.0,
+    "end": 1985.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-1991000.jpg",
+    "ocr_text": "Outline\nMitotic spindle matrix in cell division\nNuclear lamins in\ntissue building\naging\ngenome organization & transcription",
+    "speech_text": "OK. So that's that highlight. And then I'm going to go",
+    "start": 1985.0,
+    "end": 1991.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2019000.jpg",
+    "ocr_text": "Lamins in organ maintenance?\nAging & diseases\nOrgans Tissues\nStem cells\nDifferent types of cells",
+    "speech_text": "quickly through aging. So Basically, the concept really is if if lamin is very important for the making. Basically, morphogenesis and organogenesis, then you can imagine. upon aging, the major problem is our organs and tissues, really. Cannot maintain the the shape, so perhaps lamin could be one of the culprits in aging,",
+    "start": 1991.0,
+    "end": 2019.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2065000.jpg",
+    "ocr_text": "A connection between lamin-B1 and inflammation\nCytokines\n&Chemokines\nIn vitro\nreplicative senescence\nFibroblast\nLamin-B loss\nShimi et al. Genes Dev (2011) 24, 2579. Freund et al. Mol Biol Cell (2012) 23, 2066.",
+    "speech_text": "and indeed there is literature. On studies of individual replicated senescence using fibroblast, primary fibroblast. There have been findings showing that if you just take the fibroblasts, grow them, get them into senescence, You, you can see that there is this phenomena called senescence associated secretory phenotype Sasp. Meaning that when cells get into senescence state, then it secretes a lot of inflammatory cytokines, and chemokines, and accompanying that. Is lamin B one reduction? There is a very clear lamin B. One reduction by at least half. It's if it's not more. But this is really a mutual system and it's unclear if this is actually happening in",
+    "start": 2019.0,
+    "end": 2065.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2118000.jpg",
+    "ocr_text": "Vertebrate and Drosophila immune systems\nTonsils and adenoids\nFat body (Humorai response)\nThymus\ntrachea (Local response)\nRespiratory tract\nLymph nodes Lymph vessel Spleen\nDigestive tract\npeyer's patches\nSkin\nBone marrow\nT-Cell B-Cell Macrophage\nHemocyte (Cellular response)\nGut Local response\nHuman immune system\n(modified based on Ferrandon et al.2007)",
+    "speech_text": "Mabel. And this, this is how high young who who's really wonderful. fly geneticist, he decided, OK, I'm going to use fly to tackle this. Because it's too hard to study This, in humans or mouse, because there has it has too many. it has two immune systems, adaptive and innate immune system, whereas in Drosophila. Whereas in drosophila, you only have innate immune system, and you have a fairly simple immune system, the major one. The humeral fat body is a humoral regulates humeral response of the. immune system. And it's just right underneath the cuticle, shown here in blue. And then another local immune system Is the is the gut Drosophila gut, which is basically bathing in this human immune? So",
+    "start": 2065.0,
+    "end": 2118.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2144000.jpg",
+    "ocr_text": "Age-associated Lamin-B Loss in the Fat Body\n10-day fat body\n30-day fat body\n50-day fat body\nLamin-B\nLamin-A\nMerge\n10-day midgut\n50-day midgut\nLamin-B",
+    "speech_text": "Haiyan basically looked through all the tissues of young and old flie. One very striking change he found the right, almost right off the bat, Is that the fat body cells shown here? Exhibit a very clear lamin B. one reduction upon aging, but it's really only lamin B. Lamin A didn't seem to change. And then if he looked at the gut, gut doesn't seem to change its lamin level,",
+    "start": 2118.0,
+    "end": 2144.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2283000.jpg",
+    "ocr_text": "Summary\nOld fly\nYoung fly\n9090090 Local immune\nGut local immune response\nGut\nGut\nresponse\nSystemic inflammatory factors\nSystemic inflammatory factors\nFat body\nFat body\nLAM\nLAM loss\nChen et al Cell,2014",
+    "speech_text": "and then to just summarize his work. That they finding really he made is, it turns out, upon aging, the fat body cells really have a very significant loss of lemon B. Lemon, yeah, lamin B about. I think it's about at least 50 % and this reduction is. Leads to systemic systemic upregulation over a systemic inflammatory factors that get secreted. In the hemolymph in the secretory system, and that really led to the local repression of the gut immune response. We all know that in our gut we we have to modulate our bacteria microbiome so. you have to have an immune system there to make sure your microbiome won't go out of control. Now, if you have this system, if you have too much inflammatory factors here that represses the local immune system, that would cause the overgrowth of the microbiome that could cause damage. And then the gut, basically the gut stem cells try to repair that damage. But the So, but the repair is just defective because you are dealing with the old gut you end up with basically misdifferentiation, and this? increased proliferation and misdifferentiation of the gut stem cells. And that then led to this Gut hyperplasia, So this is? This is the one way that you lamin B reduction in. The, in this case it's post mitotic cell, whereas, in this case they are continuously being replaced replaced So they don't really. You don't see lemon B one loss. But this loss of lamin B, one in the fat body could really influence other systems. So now my lab, I mean, Haiyang took this whole project to his own lab in China, in Zhongshan University, and. I have one little project left to show in mammals, Do you have an example of that and we have an example that's thymic? Thymic involution is also in part driven by lamin. B. One reduction in the thymic epithelial cells and I'm not going to. to talk about that because",
+    "start": 2144.0,
+    "end": 2283.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2293450.jpg",
+    "ocr_text": "Outline\nMitotic spindle matrix in cell division\nNuclear Iamins in\ntissue building\naging\ngenome organization & transcription",
+    "speech_text": "I want to really talk about genome organization and transcription, How lamin could play a role in that so now?",
+    "start": 2283.0,
+    "end": 2293.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2445000.jpg",
+    "ocr_text": "Might lamins couple morphogenesis to\n3D genome organization and transcription?\nChi et al J.Biomed Sc9\nActin\nMicrotubule\nNesprin\nMAN1\nLAP2\nEmerin\nLamin\nBAF\nBAF\nBAF\nSUN1/2\nInterphase\nChromatin\nLamins bind to the lamina associated chromatin domains (LADs) Lineage specific dissociation of LADs from the nuclear lamina Could the dissociation of LADs shape lineage specific transcriptome?",
+    "speech_text": "Now, why do we really want to look at genome organization and? And Lamon's role, the main reason really is kind of wild. It's a. It's kind of a wild idea, but it still remains to be the idea that. I'm most excited. That is, you know, if you think about do we really understand morphogenesis? How does morphogenesis occur? We have hypothesis. We have transcriptional cascade. We have signaling cascade. And we have mechanotransduction, right? It's all kind of cascade idea. And I'm a cell biologist. A cascade doesn't make sense to me. I need to look at morphology. I I want to understand the morphological code and I really felt that this connection between lamin. cytoskeleton and lamin with chromatin could be where you could see a morphological code. And for example, if you are exerting force to change the nuclear lamina, then you might actually change chromatin organization. And that then might help you to really understand if you want to become an elongated epithelial cell, you want to have a different kind of 3D chromatin organization by influencing lamin, then you establish that transcriptome, right? So this is basically a dream, that's what I'm saying, so in fact, this dream is not completely unfunded, I would say. We know lamin interacts with the lamina associated chromatin domains. They are called Lats, and in fact, people have found that the. This lat regions dissociate move away from the nuclear lamina region to become internalized. And that internalization shows lineage specificity, so that kind of is hopeful and and encouraging, and. so the question then is could the dissociation of LADs shape lineage-specific transcriptome? And another thing I didn't add here, because I think it's Probably you know, even crazier is could the interaction. Between the cytoskeleton and nuclear lamina, through the nuclear envelope, the force kind of change the lamina meshwork, which then lead to the dissociation of lads. And that could hopefully help you to decide which which lats goes inside, and then determine the tissue building. And we already showed that lamin is important for tissue building. Ok.",
+    "start": 2293.45,
+    "end": 2445.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2514000.jpg",
+    "ocr_text": "Gene expression change upon lamin loss in mESCs\nWT versus Iamin TKO mESCs\nLamin-B1 DamID at gene promoter\nUp-regulated genes Down-regulated genes\n-10-8-64-202468 log 2 (fold change of gene expression)",
+    "speech_text": "So but you, if you want to do this, it's very complicated. So you have to kind of 1st, understand if you don't have lamin, What is the change on the on the genome organization in 3d? So one thing I just want to say is that in the field, In Lamin field, in Lamon field, because nuclear periphery is considered as a repressive environment, so for years people say Oh, nuclear periphery is just. Lamin plays a repressive role, and when we removed lamin from Es cells, and now from other cells, we really don't see that. So you can look at the gene expression change. this is wild type versus lamin triple knockout Es cells, And you can see this is a full change of the gene expression. And you can see the association with the lamin B one using Dmid technique. And if you see no correlation, you can have upregulated gene or downregulated gene, either with genes that's in the lads or not in the lads. So if you don't have lamin in the cell, you don't really specifically affect genes in the lads. you affect the global gene expression. So",
+    "start": 2445.0,
+    "end": 2514.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2603000.jpg",
+    "ocr_text": "Lamin removal changes TAD-TAD interactions in mESCs\nTAD: Topologically Associated chromatin Domain\nNormalized contact frequency\nNormalized contact frequency\nTKO\nMT\nChr10(Mb)\nChr10(Mb)\nlog 2 (fold change)\nTKO-WT\nChr10(Mb)",
+    "speech_text": "that's the 1st thing we learned by doing this clean knockout, but it's really hard to explain that. that. Is that just basically something you don't understand? You will never understand. It's just random. But we felt maybe it's not totally random. At least it's important to look at what what happens to 3d genome organization when you don't have lamin? Well, in Es cells the change is not dramatic, but it's clear it's there are changes. 1st of all, if you don't have lamin, so this is basically a chromatin. A. A region of chromosome chromosome, ten, wild type, wild type and laminal cells, and this is a plotting to show that. the topologically associated chromatin domain TADs do not change if you look at this too. If you don't have lamin, you don't affect tads, which actually makes sense, because lamin is at the nuclear periphery. it shouldn't affect tads, but. What it does affect is tad tad interactions, So each of these, each of this black line basically outline one. So this is the one tad right. So when you start to compare the intertad interactions now you can see the change, so basically there's one tad. There's an increased interaction in t, k, l cells between this tat and this tat on chromosome Tat, so you can see this throughout the genome. If you don't have lamin, you are changing the much larger cell scale chromatin structure",
+    "start": 2514.0,
+    "end": 2603.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2710000.jpg",
+    "ocr_text": "A Hidden Markov Model(HMM) of LADs and histones\nFold enrichment\nH3K9Ac\nH3K27Ac H3K36me3\nHiLands-RRed, active HiLands-O(Orange, less active) HiLands-Y(Yellow, active) Hiands-G(Green, less active) HiLands-B(Blue, repressive) HiLands-P(Purple, repressive)\nH3K4me3\nH3K9me3\nH3K27me3 H3K4m1 H1d H1c H3 Lamin-B1\nROYGBP\nHiLands (Histone lamina Landscapes)\nZheng et al MBoC.2015",
+    "speech_text": "so. now to really understand this better, just looking at TADs is not enough. TADs is just too big of a chromatin structure. You have to really dial it much lower at a higher resolution. Now to do that, a very talented bioinformatician in my lab, Really, he developed a hidden markov model to to try to separate the chromatin domains into different. features by using lamin association labs, as well as the histones, H1, H1D1C, and H3, also histone modifications, various histone modifications. He's able to separate the chromatin domain Into six different features, so we kind of laminate highlines its histone lamina, associated domains. So he used the color from red to purple to to kind of just name them, and then the red region based on the histone. modification, is most active, and followed by the next active region is the yellow region. And the orange, blue, green region, highline G, is less active. Whereas With this model, he's able to separate the lads into two chromatin features. One is Highland B, the other one is Highland P. And I just need to need you to remember this blue and purple are large regions and they are separated by their feature of. This blue region actually is having higher, higher enrichment of. H3K27 trimethylation, whereas the purple region has a lot more lamin B association. O, k. So this actually",
+    "start": 2603.0,
+    "end": 2710.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2773450.jpg",
+    "ocr_text": "TADs and HiLands\nNormalized contact frequency 0.2\nHiLands\nFold enrichment\nH3K9Ac H3K27Ac H3K36me3\nHiLands-R(active) HiLands-O (less active) HiLands-Y(active) HiLands-G (less active) HiLands-B(repressive HiLands-P(repressive)\nH3K4me3\nH3K9me3 H3K27me3 H3K4m1 H1d H1c H3 Lamin-B1\nROYGBP HiLands",
+    "speech_text": "is very important for us to be able to further study the relationship of. I mean how the 3d. Is changing because now we can map our highline region to the tads, right, these are the tads, and as you can see, the purple. Lads, the lats, purple region of the lads oftentimes is really long, which is representing mostly heterochromatin region. Of a constitutively heterochromatin region, and oftentimes, they could cover more than one tad, whereas the blue region, the. Blue lats region are much shorter. Sometimes it could be one one tad long, but sometimes it's it's less than one tad long. And all the rest of the interior chromatin, the euchromatin region, they are much smaller and often have multiple, multiple, one TAD could have multiple features of this chromatin. Okay, so through this analysis and looking at by in-depth analysis of the Hi-C data, we predicted",
+    "start": 2710.0,
+    "end": 2773.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2836000.jpg",
+    "ocr_text": "Expansion of HiLands-P LADs upon lamin loss\nchr1\nchr1\nWT\nWT\nChr1\nTKO\nTKO\nchr4\nchr4\nWT\nWT\nChr4\nTKO\nTKO\nChr13\nchr13\nchr13\nWT\nWT\nChr14\nTKO\nTKO\nchr14\nchr14\nWT\nWT\nTKO\nTKO\nVolume(μm3)\nSurface(μm2)",
+    "speech_text": "that when you lose lamin, It looks like the Purple Lights region are actually expanding, so this is again Chromosome chromosome 1413 and 14. That's basically we. From the global analysis, it predicts that the Purple Lads region are expanding and but you really want to. show that. So we performed a fish experiment, basically by designing oligo arrays on selected On selected regions like this, and then just do the oligo paint. This is a very cool. method, which allows you to really look at the volume and surface area of the, of these specific regions you painted. And as you can see that triple knockout ESLs have significantly expanded purple Purple lads, as you, I mean all of this. Each one of this four probes showed the expansion. Whereas the Hi-C analysis,",
+    "start": 2773.45,
+    "end": 2836.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2868000.jpg",
+    "ocr_text": "Detachment of HiLands-B LADs upon lamin loss\nmm9\nChr13\n20Mb\nRegion1\nchr13\nEmerin DamID (TKO) Emerin DamID (WT) HiLands\nWT\nTKO\nmm9\n10Mb\nChr1\nchr1\nRegion2\nEmerin DamID (TKO)\nWT\nEmerin DamID (WT)\nTKO\nHiLands\nDistance(μm)",
+    "speech_text": "the sequencing analysis also suggests that the blue LADs region looks like it's kind of fall inward. So again, you can use The oligo paint to show that, and by picking different regions you can see. Indeed, if you look, if you measure the nuclear perforate distance from the nuclear perforate away from your fish probe, you can see that Tko. That the blue region basically shift inward, so now this is one",
+    "start": 2836.0,
+    "end": 2868.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-2986000.jpg",
+    "ocr_text": "Enhancer activity changes upon lamin loss correlate with 3D interaction changes\nUp-regulated H3K27Ac peaks\nDown-requlated H3K27Ac peaks\nInteraction change (reads)\nLamin-B1 DamlD at gene promoter\nUp-regulated genes Down-regulated genes\nlog 2 (fold change of gene expression)\nROYGBP HiLands\nROYGBP HiLands",
+    "speech_text": "one finding. So basically they are, this 3D genomic change seems to be probably starting from the purple region and blue region changing differently. Purple region is expanding, blue region is going inward. Whereas in the past, people have been always confused and troubled by the fact when you don't have lamin, and you just don't see a clear change on nuclear. on the LADs. Here, our data really suggests, well, the reason you don't see that is because you are looking at LADs as a totality. You are not separating them because they, they are changing differently, and I will give you a model toward the end. So the other thing we tried to we, we are able to do because we are able to really look at the chromatin regions in with its features, is to really look at. enhancer activities, the active enhancer, H3K27 acetyl peaks that represents active, it's correlated with transcriptional activity. So you can look at the interaction changes between these chromatin regions and then see how it's correlating with the change of enhancers. And basically the take-home message for this part of the figure, So here, basically repeats showing you there is no correlation between lemon association and gene expression activity, but we do see some correlation between. Enhancer, active enhancer change for the enhancers that's upregulated. And these are chromatin regions that show a dissociation from this most repressive large region, the purple large region. Whereas for enhancers, that's downregulated, we show an increased interaction for with this other. Inactive region, the blue light region, so this really shows the only way you can understand the gene transcriptional change when you don't have lamin. is to understand the 3D genome interaction change. And indeed",
+    "start": 2868.0,
+    "end": 2986.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-3109450.jpg",
+    "ocr_text": "Gene expression changes correlate with altered active and repressed HiLands in different TADs\nRian locus (down regulated in TKO mESCs)\nNod1 locus (up regulated in TKO mESCs)\nChr12 (Mb)\nChr6 (Mb)\nog(FC of 4C)\nlog 2 (FC of 4C)\nT\nHi-C\nHi-C\nlog 2  (fold change)\nlog 2 (fold change)",
+    "speech_text": "we can, I can also show you a specific example here. So basically here is to look at two specific loci. One is Ryan locus. It's downregulated in Tkl Es cells, and another one is node, not one locus, which is upregulated in Es cells. So again here you'll So this is actually A4c4c analysis of across this region using a probe. Using by looking at the interaction with this Ryan locus, and this is basically the hilands that. I have been talking to you about. And then this is basically a high C analysis. So what I want you to look at this. So this is a Ryan locus and And that's downregulated. What you can see is when you don't have lam. This Ryan locus exhibited an increased interaction. With this inactive chromatin region that's blue, this is a blue lats that's inactive, whereas it has a decreased interaction with this. Highland Red region, which is the active, a U chromator region, So that could explain why this is down regulated. On the other hand, if you look at this upregulated not one locus, you can see that the probably one thing that contribute to its upregulation is because it's picking up the, it's basically starting to dissociate. So you go up from here, look at this decreased interaction. Blue is decreased interaction with this purple LADs inactive region and second one and third one. So this really is correlated with Basically, when you have a lads change and you have tad tad interaction change, that makes the chromatin to. find itself in different neighborhood, different activity region. That's explain, that can explain global effect on genome organized, on genome wide",
+    "start": 2986.0,
+    "end": 3109.45
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-3357000.jpg",
+    "ocr_text": "A model and possible implications\nWT mESCs\nIamin TKO mESCs\nlamin meshwork\nnuclear pore\nnuclear envelope\nZheng et al Mol Cell, in press\nActin\nMicrotubule\nNesprin\nLamin\nEmerin\nLAP2\nMAN1\nBAF\nBAF\nBAF\nSUN1/2\nChromatin",
+    "speech_text": "transcriptional change. Okay. So I'm going to give you a model and then I will spend a few minutes to just kind of entertain a couple of ideas. One idea essentially. So basically the take home message is, so the traditional understanding of nuclear lamina is always nuclear lamina is the tether for the lamina associated chromatin. But what we found is if you Remove this mesh work. You don't have wholesale inward folding of the large region. Instead, this purple region expands and we believe this expansion basically makes no space anymore for this blue Blue light region, blue light region, we draw it in a more condensed manner. It's because they are enriched more enriched for. K9k27 trimethylation, which is which has a rowing, condensing chromatin, So we think this region falls inward. We do have data to show that. So when this region fall inward, then it basically changes the chromatin chromatin interactions, And then if you push. a existing this gene, if you push this gene that's expressed into a way more kind of toward the repressed purple region, it's going to be repressed. And then if you push this inactive region away from this purple region or push it closer to this active chromatin, then it becomes expressed. So that's why the impact is really genome wide. Now, why is this important? To why is it important? that's the 1st question? Why am I excited about this? Well, the reason that's exciting really is again. you come back. So we said, basically, if you don't, you remove all the mesh work, you have this dramatic change of chromatin organization. Now you can imagine, We know, in fact, from other studies, I didn't have time to talk about this use. When we remove all lamins, you can see the nuclear pores or aggregate. To toward the centrosome, because the dining is pulling all the pores towards the centrosome, So it really lemons, really have a role in kind of. Getting, making sure that the underlining whatever force that cytoskeleton is exerting in the nucleus is modulated. So now you can think, perhaps, as cells are exerting force to kind of build you know, moving. Moving and exerting force along the nuclear surface, you could imagine that that force could help to change the mesh size. of the nuclear lamina. When that mesh size change, it's almost like you are just locally removing some lamina mesh That could locally open up this purple region, that could, then allowing the neighbor neighboring blue lads to fall inward. And then you know that cell morphogenesis often is transient and different trajectories of differentiation could have impact on different regions of the nucleus surface. So that could actually one day perhaps help us to understand how this kind of morphogenesis would have perhaps direct impact in how you establish 3D genome organization. Therefore, a unique transcriptome that's lineage specific. So I know, I mean, probably not in my lifetime we're going to understand this, but At least kind of this journey. For over ten years of looking at Lamon, so far so good, maybe at some point it's going to fall completely. Wrong, but so far it looks like lamon regulates morphogenesis, and Lamon really connects cytoskeleton to. Chromatin, and then, if you don't have lamins, you could have this significant inward falling of chromatin that will lead to the global genome. organization change transcriptome change. So perhaps this could be a node that will allow us to understand the morphological implications of how you organize different transcriptome. That's it. So I'm going to quickly",
+    "start": 3109.45,
+    "end": 3357.0
+  },
+  {
+    "check": "paddleocr+check",
+    "name": "NIH-00363-3451000.jpg",
+    "ocr_text": "Acknowledgements\nCell division and spindle matrix: Andy Wilde(Professor, University of Toronto) Chris Wiese(Assistant Professor, University of Wisconsin Kan CaoAssociate Professor, University of Maryland Ming-Ying Tsai(Assistant Professor, Nebraska University Hoi LiAssociate Professor, Nanyang UniversitySingapore Ben Goodman(Program Officer, NASA) Yuxuan Guo (Postdoctoral fellow, Harvard University Jiang Hao(Assistant professor, Zhongshang University-BuGZ\nGenome organization in development and aging: Youngio Kim (Assistant professor, Institute of Medi-Bio Science)-Lamins Haiyang Chen(Assistant professor, Zhongshang University)-Lamins Xiaobin Zheng(Postdoctoral Fellow/Bioinformatician)- Lamins Jiabiao Hu(Postdoctoral fellow)--Lamins\nCollaborators: Xueliang Zhu (Institute of Biochemistry and Cell Biology, China)-Spindle Sheath John Yates and Bingwen Lu(Scripps Research Institute)-Proteomics Minoru Ko(NIA, NIH)and Nick Gaiano(JHMI)-Lamins\nFunding:NIH, NSFC (with Xueliang Zhu), and Ellison Medical Foundation",
+    "speech_text": "acknowledge people in my lab. I think I'm doing okay with my time. So the cell division study is really a long term coming. I start my lab to try to understand cell division. I. We actually did some Gamma Turk work microtubule nucleation work. But I, I, we decided not to go do more, because there are a lot of good people doing that very quickly so. We mostly focused on spindle matrix because not that many people are doing it, and you know that's where it's better to to work on this thing. I, I, I believe it's very important. So and many of these people contributed. I think no one is currently in my lab now. I'm actually trying to recruit a mitosis person to work in my lab right now. So and then the genome organization work and also. Aging are mostly down by this group of people. Jabel did a lot of fish for the work I just told you shall being. It was very important in helping us to analyze and model the chromatin, and Haiyang did the the aging work and. All the drosophila work, and Yongzhou did a lot of work on the initial establishment of the system. And I've had a number of collaborators, and some of them I'm still collaborating. And here are my funding, and I've I finished my. Ellison funding, but that was actually very important for us to do some work in aging, and Nam, Ok, thank you very much.",
+    "start": 3357.0,
+    "end": 3451.0
+  }
+]

@@ -23,98 +23,100 @@ input_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG
 with open(input_file, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
+# Define evaluation prompts for each criterion with clear output instructions and a scale of 1-10
+criteria_prompts = {
+    "focus": """
+        Focus (1-10):  
+        Definition: Evaluates whether the script remains centered on its main idea or topic without introducing irrelevant content.  
+        Sub-Criteria:  
+        - Relevance of Content: Are all points, examples, and details directly tied to the central idea?  
+        - Clarity of Objective: Is the main purpose or argument of the script clearly defined and maintained throughout?  
+        - Avoidance of Tangents: Are there minimal deviations or distractions from the main topic?  
+
+        **Instruction:** Strictly follow this format:  
+        - First line: "Score: [1-10]"  
+        Any deviation from this format will be considered incorrect.
+    """,
+    "coherence": """
+        Coherence (1-10):  
+        Definition: Assesses the logical organization and connectivity of ideas, ensuring a smooth and unified narrative.  
+        Sub-Criteria:  
+        - Logical Progression: Are ideas presented in a sequence that makes sense and builds logically from one point to the next?  
+        - Internal Consistency: Are there no contradictions, overlaps, or repeated points that disrupt the overall logic?  
+        - Quality of Transitions: Do transitions between sentences and sections enhance the flow, avoiding abrupt changes?  
+
+        **Instruction:** Strictly follow this format:  
+        - First line: "Score: [1-10]"  
+        Any deviation from this format will be considered incorrect.
+    """,
+    "fluency": """
+        Fluency (1-10):  
+        Definition: Evaluates the linguistic quality and readability of the script, focusing on how effectively it communicates.  
+        Sub-Criteria:  
+        - Language Accuracy: Are sentences grammatically correct and free of awkward phrasing or errors?  
+        - Clarity of Expression: Are ideas expressed clearly, with appropriate vocabulary and sentence structures?  
+        - Pacing and Rhythm: Is the length and structure of sentences and paragraphs balanced, making the script easy to follow and deliver?  
+
+        **Instruction:** Strictly follow this format:  
+        - First line: "Score: [1-10]"  
+        Any deviation from this format will be considered incorrect.
+    """
+}
+
 # Evaluate each generated answer and store results
 evaluation_results = []
 for item in data:
     generated_answer = item.get("generated_answer", "")
     if not generated_answer:
         continue
-    
-    # Define messages for evaluation with roles and structured content
-#     evaluation_messages = [
-#         {"role": "system", "content": "You are a helpful assistant evaluating academic presentations."},
-#         {"role": "user", "content": f"""You will evaluate speech script A for one slide in an academic presentation. Rate it on a scale from 1 (worst) to 5 (best) in three aspects:
 
-# 1. Fluency
-#    - Objective: Assess sentence structure and grammar.
-#    - Considerations: Are the sentences well-formed? Is the grammar correct and appropriate for an academic presentation?
+    criterion_scores = {}
+    for criterion, prompt in criteria_prompts.items():
+        evaluation_message = [
+            {"role": "system", "content": "You are a helpful assistant evaluating academic presentations."},
+            {
+                "role": "user",
+                "content": f"""
+                Script A:  
+                {generated_answer}  
 
-# 2. Accuracy
-#    - Objective: Check for factual correctness based on general knowledge.
-#    - Considerations: Does Script A present accurate information consistent with widely accepted facts, established theories, findings, and methodologies in the relevant field? 
+                {prompt}
+                """
+            }
+        ]
+        
+        # Generate evaluation using the model
+        response = llm_pipeline(
+            evaluation_message,
+            max_new_tokens=150,
+            temperature=0.8,
+            num_return_sequences=1,
+            return_full_text=False
+        )
+        
+        evaluation_text = response[0]['generated_text']
+        print(f"{criterion} Evaluation Text:", evaluation_text)
 
-# 3. Coherence
-#    - Objective: Evaluate the natural flow and readability of the script as a spoken presentation.
-#    - Considerations: Does the script sound smooth and cohesive as a speech? Does it maintain a logical, engaging structure?
+        # Validate and parse the output to extract the score
+        score = None
+        lines = evaluation_text.splitlines()
+        if len(lines) > 0 and lines[0].startswith("Score:"):
+            try:
+                score = int(lines[0].split("Score:")[-1].strip())
+            except ValueError:
+                pass  # Log invalid score format if needed
 
-# Given the script below, provide scores and brief explanations:
-
-# Script A:
-# {generated_answer}
-
-# Now, please start your evaluation:
-
-# Fluency Score: [1-5]
-# Reason: [Brief explanation]
-
-# Accuracy Score: [1-5]
-# Reason: [Brief explanation]
-
-# Coherence Score: [1-5]
-# Reason: [Brief explanation]"""}
-#     ]
-    evaluation_messages = [
-        {"role": "system", "content": "You are a helpful assistant evaluating academic presentations."},
-        {
-        "role": "user",
-        "content": f"""
-        You will evaluate speech script A for one slide in an academic presentation. Rate it on a scale from 1 (worst) to 5 (best) in three aspects:
-
-        1. **Focus and conciseness**
-        - Does the script highlight key points effectively without unnecessary repetition?
-
-        2. **Accuracy**
-        - Is the information factually correct and aligned with established knowledge?
-
-        3. **Clarity and Coherence**
-        - Is the script logically structured and easy to follow?
-
-        Given the script below, provide scores and brief explanations:
-
-        **Script A:**
-        {generated_answer}
-
-        Now, please start your evaluation:
-
-        - **Focus and conciseness Score:** [1-5]  
-        *Reason:* [Brief explanation]
-
-        - **Accuracy Score:** [1-5]  
-        *Reason:* [Brief explanation]
-
-        - **Clarity and Coherence Score:** [1-5]  
-        *Reason:* [Brief explanation]
-        """
+        criterion_scores[criterion] = {
+            "full_output": evaluation_text,
+            "score": score
         }
-    ]
 
-    # Generate evaluation using the model
-    response = llm_pipeline(
-        evaluation_messages,
-        max_new_tokens=300,
-        temperature=0.4,
-        num_return_sequences=1,
-        return_full_text=False
-    )
-    evaluation_text = response[0]['generated_text']
-    print("Evaluation Text:", evaluation_text)
-    
     # Store the evaluation result
     evaluation_results.append({
         "question": item.get("question", ""),
         "answer": item.get("answer", ""),
         "generated_answer": generated_answer,
-        "evaluation": evaluation_text
+        "evaluation": criterion_scores
     })
 
 # Save the evaluation results to an output file
