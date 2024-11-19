@@ -1,6 +1,9 @@
 import json
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, set_seed
+import re
+
+set_seed(42)
 
 # Load LLaMA model and tokenizer
 MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
@@ -32,7 +35,7 @@ for item in data:
     
     extraction_messages = [
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": f"""There are two scripts A and B. Please extract distinct statements or concepts critical to the academic content. For extraction, prioritize statements directly related to the research topic, such as definitions, key arguments, or distinctions; disregard non-academic elements like greetings, transitions, or personal expressions unless they are critical to understanding the academic material.
+        {"role": "user", "content": f"""There are two scripts A and B. Please extract distinct information units critical to the academic content. For extraction, prioritize statements directly related to the research topic, such as definitions, key arguments, or distinctions; disregard non-academic elements like greetings, transitions, or personal expressions unless they are critical to understanding the academic material.
 
 Script A (Answer):
 {answer}
@@ -64,19 +67,18 @@ Do not include any additional commentary, explanations before, within, or after 
     )
     extraction_text = response[0]['generated_text']
     
-    # Parse the extracted text to split into Script A and Script B units
-    script_a_units = []
-    script_b_units = []
+    # Parse extracted text into units for Scripts A and B
+    script_a_units, script_b_units = [], []
     current_section = None
     for line in extraction_text.splitlines():
-        if line.strip().startswith("Script A Information Units:"):
+        if line.startswith("Script A Information Units:"):
             current_section = "A"
-        elif line.strip().startswith("Script B Information Units:"):
+        elif line.startswith("Script B Information Units:"):
             current_section = "B"
-        elif line.strip().startswith("-") and current_section == "A":
-            script_a_units.append(line.strip().lstrip("- ").strip())
-        elif line.strip().startswith("-") and current_section == "B":
-            script_b_units.append(line.strip().lstrip("- ").strip())
+        elif line.startswith("-") and current_section == "A":
+            script_a_units.append(line.strip("- ").strip())
+        elif line.startswith("-") and current_section == "B":
+            script_b_units.append(line.strip("- ").strip())
     
     extracted_units.append({
         "question": item.get("question", ""),
@@ -87,53 +89,62 @@ Do not include any additional commentary, explanations before, within, or after 
             "Script B Information Units": script_b_units
         }
     })
-
-    # Print concise intermediate extraction result
-    print(f"Question: {item.get('question', '')[:50]}...")  # Show truncated question for readability
-    print(f"Script A Units (count): {len(script_a_units)}")
-    print(f"Script B Units (count): {len(script_b_units)}")
-    print("----------")
+    print(f"Extraction Result - Script A Units: {len(script_a_units)}, Script B Units: {len(script_b_units)}")
 
 # Save intermediate results
-intermediate_output_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/alog/l2p/gen/llama3_info_units.json'
+intermediate_output_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/alog/l2p/gen/llama3_info_units_3stage.json'
 with open(intermediate_output_file, 'w', encoding='utf-8') as f:
     json.dump(extracted_units, f, indent=2, ensure_ascii=False)
 
-# Stage 2: Information Unit Matching
+# Stage 2: Information Unit Matching with Bidirectional Context Check
 matching_results = []
 for units in extracted_units:
-    answer_units = units["extraction"].get("Script A Information Units", [])
-    generated_units = units["extraction"].get("Script B Information Units", [])
-    
-    formatted_answer_units = "\n".join([f"- {unit}" for unit in answer_units])
-    formatted_generated_units = "\n".join([f"- {unit}" for unit in generated_units])
+    answer_units = units["extraction"]["Script A Information Units"]
+    generated_units = units["extraction"]["Script B Information Units"]
+    answer_context = units["answer"]
+    generated_context = units["generated_answer"]
 
-    matching_messages = [
+    # Define bidirectional matching messages
+    bidirectional_matching_messages = [
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": f"""Compare each information unit in Script B against Script A. For each unit in Script B, indicate if there is an **Exact Match**, **Partial Match**, or **No Match** in Script A.
+        {"role": "user", "content": f"""Analyze information units in Scripts A and B. For each unit in Script B, indicate if it has an **Exact Match**, **Partial Match**, or **No Match** in Script A. Similarly, for each unit in Script A, do the same in relation to Script B.
+
+Criteria for Match Status:
+   - Exact Match: Units conveying the highly similar or identical contents, allowing for minor phrasing differences but without significant additions or omissions in meaning.
+   - Partial Match: Units share similar ideas with noticeable content differences, such as partial additions, omissions or rephrasing that affect the conveyed meaning (count each as 0.5).
+   - Unique Units (No Match): Units found only in one script with no equivalent in the other.
+
+Context for Script A:
+{answer_context}
+
+Context for Script B:
+{generated_context}
 
 Script A Information Units:
-{formatted_answer_units}
+- {answer_units}
 
 Script B Information Units:
-{formatted_generated_units}
+- {generated_units}
 
 Output in this format:
+Match Analysis:
 - Script B Unit: [Unit]
-  - Match Status: [Exact Match / Partial Match / No Match]
+  - Match Status in Script A: [Exact Match / Partial Match / No Match]
   - Corresponding Script A Unit (if any): [Script A Unit or "None"]
+- Script A Unit: [Unit]
+  - Match Status in Script B: [Exact Match / Partial Match / No Match]
+  - Corresponding Script B Unit (if any): [Script B Unit or "None"]
 """}
     ]
 
     response = llm_pipeline(
-        matching_messages,
+        bidirectional_matching_messages,
         max_new_tokens=800,
         temperature=0.3,
         num_return_sequences=1,
         return_full_text=False
     )
     matching_text = response[0]['generated_text']
-    
     matching_results.append({
         "question": units["question"],
         "answer": units["answer"],
@@ -141,23 +152,61 @@ Output in this format:
         "extraction": units["extraction"],
         "matching": matching_text
     })
-
-    # Print concise matching result
-    print(f"Matching for Question: {units.get('question', '')[:50]}...")
-    print(f"Matching Summary:\n{matching_text[:800]}...")  # Show first 200 chars for readability
-    print("----------")
+    print(f"Matching Summary:\n{matching_text[:800]}...")  # Display part of matching output
 
 # Stage 3: Calculate Precision, Recall, and F1 Score
 final_results = []
 for result in matching_results:
     matching_text = result["matching"]
 
-    # Count the matches based on the matching_text analysis
-    exact_matches = matching_text.count("Exact Match")
-    partial_matches = matching_text.count("Partial Match") * 0.5
-    unique_b = matching_text.count("No Match")
-    unique_a = len(result["extraction"]["Script A Information Units"]) - (exact_matches + partial_matches)
+    # Initialize counters
+    exact_matches = 0
+    partial_matches = 0
+    unique_b = 0
+    unique_a = 0
 
+    # Patterns for parsing matches in the matching text
+    a_unit_pattern = r"- Script A Unit: (.+)"
+    b_unit_pattern = r"- Script B Unit: (.+)"
+    match_status_pattern = r"Match Status in (Script A|Script B): (Exact Match|Partial Match|No Match)"
+    corresponding_unit_pattern = r"Corresponding (Script A|Script B) Unit: (.+)"
+
+    # Parse blocks of the matching text
+    matching_blocks = matching_text.split("\n\n")
+    for block in matching_blocks:
+        script_unit = None
+        match_status = None
+        corresponding_unit = None
+        context = None
+
+        # Extract each line in a block and process before overwriting
+        for line in block.splitlines():
+            if re.search(a_unit_pattern, line):
+                script_unit = re.search(a_unit_pattern, line).group(1).strip()
+                context = "A"
+            elif re.search(b_unit_pattern, line):
+                script_unit = re.search(b_unit_pattern, line).group(1).strip()
+                context = "B"
+            elif re.search(match_status_pattern, line):
+                match_status = re.search(match_status_pattern, line).group(2).strip()
+
+                # Process matches immediately after updating match_status
+                if context == "B":
+                    if match_status == "Exact Match":
+                        exact_matches += 1
+                    elif match_status == "Partial Match":
+                        partial_matches += 0.5
+                        unique_b += 0.5  # Count `Partial Match` as 0.5 for `Script B` units
+                    elif match_status == "No Match":
+                        unique_b += 1
+                elif context == "A" and match_status == "No Match":
+                    unique_a += 1  # Only count `No Match` for `Script A` units as unique_a
+                elif context == "A" and match_status == "Partial Match":
+                    unique_a += 0.5
+            elif re.search(corresponding_unit_pattern, line):
+                corresponding_unit = re.search(corresponding_unit_pattern, line).group(2).strip()
+
+    # Compute metrics
     tp = exact_matches + partial_matches
     fp = unique_b
     fn = unique_a
@@ -173,19 +222,19 @@ for result in matching_results:
         "extraction": result["extraction"],
         "matching": result["matching"],
         "metrics": {
+            "exact_matches": exact_matches,
+            "partial_matches": partial_matches,
+            "unique_b": unique_b,
+            "unique_a": unique_a,
             "Precision": round(precision, 2),
             "Recall": round(recall, 2),
             "F1 Score": round(f1_score, 2)
         }
     })
+    print(f"Metrics - Precision: {precision:.2f}, Recall: {recall:.2f}, F1 Score: {f1_score:.2f}")
 
-    # Print concise metric results
-    print(f"Metrics for Question: {result.get('question', '')[:50]}...")
-    print(f"Precision: {precision:.2f}, Recall: {recall:.2f}, F1 Score: {f1_score:.2f}")
-    print("----------")
-
-# Save the final results to an output file
-output_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/alog/l2p/gen/llama3_final_eval.json'
+# Save the final results
+output_file = '/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/alog/l2p/gen/llama3_obj_3stage_eval.json'
 with open(output_file, 'w', encoding='utf-8') as f:
     json.dump(final_results, f, indent=2, ensure_ascii=False)
 

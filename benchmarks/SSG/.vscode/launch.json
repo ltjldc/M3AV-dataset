@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug llama3_obj_3stage_evaluator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/research/milsrg1/user_workspace/tl578/M3AV-dataset/benchmarks/SSG/ssg_llama3/llama3_obj_3stage_evaluator.py",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Debug llama3_rel_cov_evaluator",
             "type": "debugpy",
             "request": "launch",
